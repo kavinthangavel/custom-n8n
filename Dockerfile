@@ -13,8 +13,8 @@ RUN apk update && \
     git
 
 # Install Python packages
-RUN python3 -m pip install --no-cache-dir --upgrade pip && \
-    python3 -m pip install --no-cache-dir \
+RUN python3 -m pip install --no-cache-dir --upgrade pip --break-system-packages && \
+    python3 -m pip install --no-cache-dir --break-system-packages \
     yt-dlp \
     requests \
     beautifulsoup4 \
