@@ -13,16 +13,26 @@ RUN apk update && \
     git
 
 # Install Python packages
-RUN python3 -m pip install --no-cache-dir --upgrade pip --break-system-packages && \
-    python3 -m pip install --no-cache-dir --break-system-packages \
+RUN python3 -m pip install --no-cache-dir --upgrade pip --break-system-packages --root-user-action=ignore && \
+    python3 -m pip install --no-cache-dir --break-system-packages --root-user-action=ignore \
     yt-dlp \
     requests \
     beautifulsoup4 \
     pandas \
     numpy
 
-# Add any other tools you might need
-# RUN npm install -g some-package
+# Install npm packages
+RUN npm install -g \
+    puppeteer \
+    playwright \
+    cheerio \
+    axios \
+    lodash \
+    moment \
+    uuid \
+    sharp
+
+
 
 # Return to node user
 USER node
