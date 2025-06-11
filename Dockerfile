@@ -24,13 +24,7 @@ RUN python3 -m pip install --no-cache-dir --upgrade pip --break-system-packages 
 # Install npm packages
 RUN npm install -g \
     puppeteer \
-    playwright \
-    cheerio \
-    axios \
-    lodash \
-    moment \
-    uuid \
-    sharp
+    unzipper
 
 
 
